@@ -1,0 +1,17 @@
+{
+    "name": "author/wp-plugin-starter",
+    "description": "PLUGIN_DESCRIPTION",
+    "type": "wordpress-plugin",
+    "license": "gpl-3.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "Author\\WpPluginStarter\\": "src/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": ">=7.3"
+        }
+    },
+    "require": {}
+}
