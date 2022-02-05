@@ -9,56 +9,56 @@ class WpPluginStarter {
 	 *
 	 * @var string
 	 */
-	public static $VERSION;
+	public static $version;
 
 	/**
 	 * Plugin file.
 	 *
 	 * @var string
 	 */
-	public static $PLUGIN_FILE;
+	public static $plugin_file;
 
 	/**
 	 * Plugin directory.
 	 *
 	 * @var string
 	 */
-	public static $PLUGIN_DIR;
+	public static $plugin_directory;
 
 	/**
 	 * Plugin base name.
 	 *
 	 * @var string
 	 */
-	public static $BASENAME;
+	public static $basename;
 
 	/**
 	 * Plugin text directory path.
 	 *
 	 * @var string
 	 */
-	public static $TEXT_DOMAIN_DIR;
+	public static $text_domain_directory;
 
 	/**
 	 * Plugin text directory path.
 	 *
 	 * @var string
 	 */
-	public static $TEMPLATES_DIR;
+	public static $template_directory;
 
 	/**
 	 * Plugin assets directory path.
 	 *
 	 * @var string
 	 */
-	public static $ASSETS_DIR;
+	public static $assets_directory;
 
 	/**
 	 * Plugin url.
 	 *
 	 * @var string
 	 */
-	public static $PLUGIN_URL;
+	public static $plugin_url;
 
 	/**
 	 * WpPluginStarter Constructor.
@@ -74,14 +74,14 @@ class WpPluginStarter {
 	 * @return void
 	 */
 	protected function init(): void {
-		self::$VERSION         = '1.0.0';
-		self::$PLUGIN_FILE     = WP_PLUGIN_STARTER_PLUGIN_FILE;
-		self::$PLUGIN_DIR      = WP_PLUGIN_STARTER_PLUGIN_DIR;
-		self::$BASENAME        = plugin_basename( self::$PLUGIN_FILE );
-		self::$TEXT_DOMAIN_DIR = self::$PLUGIN_DIR  . '/languages';
-		self::$TEMPLATES_DIR   = self::$PLUGIN_DIR  . '/templates';
-		self::$PLUGIN_URL      = plugins_url( '', self::$PLUGIN_FILE );
-		self::$ASSETS_DIR      = self::$PLUGIN_URL . '/assets';
+		self::$version               = '1.0.0';
+		self::$plugin_file           = WP_PLUGIN_STARTER_PLUGIN_FILE;
+		self::$plugin_directory      = WP_PLUGIN_STARTER_PLUGIN_DIR;
+		self::$basename              = plugin_basename( self::$plugin_file );
+		self::$text_domain_directory = self::$plugin_directory . '/languages';
+		self::$template_directory    = self::$plugin_directory . '/templates';
+		self::$plugin_url            = plugins_url( '', self::$plugin_file );
+		self::$assets_directory      = self::$plugin_url . '/assets';
 	}
 
 	/**
@@ -90,8 +90,8 @@ class WpPluginStarter {
 	 * @return void
 	 */
 	protected function register_lifecycle(): void {
-		register_activation_hook( self::$PLUGIN_FILE , [ Activate::class, 'handle' ] );
-		register_deactivation_hook( self::$PLUGIN_FILE , [ Deactivate::class, 'handle' ] );
+		register_activation_hook( self::$plugin_file, [ Activate::class, 'handle' ] );
+		register_deactivation_hook( self::$plugin_file, [ Deactivate::class, 'handle' ] );
 	}
 
 	/**
