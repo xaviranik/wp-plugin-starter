@@ -8,10 +8,26 @@
             "Author\\WpPluginStarter\\": "src/"
         }
     },
-    "config": {
-        "platform": {
-            "php": ">=7.3"
-        }
+    "require": {
+        "php": "^7.3|^8.0"
     },
-    "require": {}
+    "require-dev": {
+        "wp-coding-standards/wpcs": "dev-master",
+        "phpcompatibility/php-compatibility": "*",
+        "phpcompatibility/phpcompatibility-wp": "*",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7"
+    },
+    "scripts": {
+        "phpcs": [
+            "vendor/bin/phpcs -p -s"
+        ],
+        "phpcbf": [
+            "vendor/bin/phpcbf -p"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
 }
