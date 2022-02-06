@@ -2,6 +2,13 @@
 
 namespace Author\WpPluginStarter;
 
+use Author\WpPluginStarter\Container\Container;
+
+/**
+ * Main plugin class.
+ *
+ * @package Author\WpPluginStarter
+ */
 class WpPluginStarter {
 
 	/**
@@ -61,11 +68,19 @@ class WpPluginStarter {
 	public static $plugin_url;
 
 	/**
+	 * Container that holds all the services.
+	 *
+	 * @var Container
+	 */
+	public static $container;
+
+	/**
 	 * WpPluginStarter Constructor.
 	 */
 	public function __construct() {
 		$this->init();
 		$this->register_lifecycle();
+		$this->register_container();
 	}
 
 	/**
@@ -92,6 +107,16 @@ class WpPluginStarter {
 	protected function register_lifecycle(): void {
 		register_activation_hook( self::$plugin_file, [ Activate::class, 'handle' ] );
 		register_deactivation_hook( self::$plugin_file, [ Deactivate::class, 'handle' ] );
+	}
+
+	/**
+	 * Initializes the container.
+	 *
+	 * @return void
+	 */
+	protected function register_container(): void {
+		$container       = new Container();
+		self::$container = $container;
 	}
 
 	/**
