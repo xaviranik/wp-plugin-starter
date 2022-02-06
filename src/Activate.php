@@ -2,6 +2,11 @@
 
 namespace Author\WpPluginStarter;
 
+/**
+ * Activation class.
+ *
+ * @package Author\WpPluginStarter
+ */
 class Activate {
 
 	/**

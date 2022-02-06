@@ -2,6 +2,11 @@
 
 namespace Author\WpPluginStarter;
 
+/**
+ * Deactivation class.
+ *
+ * @package Author\WpPluginStarter
+ */
 class Deactivate {
 
 	/**
