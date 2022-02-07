@@ -1,13 +1,13 @@
 <?php
 
-namespace Author\WpPluginStarter\Container;
+namespace Author\WpPluginStarter\Core\Container;
 
 use Exception;
 use ReflectionClass;
 use ReflectionException;
 use ReflectionParameter;
-use Author\WpPluginStarter\Container\Exception\DependencyIsNotInstantiableException;
-use Author\WpPluginStarter\Container\Exception\DependencyHasNoDefaultValueException;
+use Author\WpPluginStarter\Core\Container\Exception\DependencyHasNoDefaultValueException;
+use Author\WpPluginStarter\Core\Container\Exception\DependencyIsNotInstantiableException;
 
 class Container {
 

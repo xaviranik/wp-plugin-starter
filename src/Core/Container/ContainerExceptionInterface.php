@@ -1,6 +1,6 @@
 <?php
 
-namespace Author\WpPluginStarter\Container;
+namespace Author\WpPluginStarter\Core\Container;
 
 /**
  * Base interface representing a generic exception in a container.
