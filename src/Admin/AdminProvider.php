@@ -2,7 +2,7 @@
 
 namespace Author\WpPluginStarter\Admin;
 
-use Author\WpPluginStarter\Core\Provider;
+use Author\WpPluginStarter\Core\Abstracts\Provider;
 
 /**
  * Class AdminProvider.

@@ -2,8 +2,8 @@
 
 namespace Author\WpPluginStarter;
 
-use Author\WpPluginStarter\Core\Provider;
 use Author\WpPluginStarter\Admin\AdminProvider;
+use Author\WpPluginStarter\Core\Abstracts\Provider;
 use Author\WpPluginStarter\Frontend\FrontendProvider;
 
 /**

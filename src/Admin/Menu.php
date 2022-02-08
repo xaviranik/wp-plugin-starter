@@ -2,7 +2,7 @@
 
 namespace Author\WpPluginStarter\Admin;
 
-use Author\WpPluginStarter\Core\Abstracts\HookableInterface;
+use Author\WpPluginStarter\Core\Interfaces\HookableInterface;
 
 /**
  * Admin menu class.

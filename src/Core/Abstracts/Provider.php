@@ -1,9 +1,9 @@
 <?php
 
-namespace Author\WpPluginStarter\Core;
+namespace Author\WpPluginStarter\Core\Abstracts;
 
 use Author\WpPluginStarter\WpPluginStarter;
-use Author\WpPluginStarter\Core\Abstracts\HookableInterface;
+use Author\WpPluginStarter\Core\Interfaces\HookableInterface;
 
 /**
  * Handles instantiation of services.

@@ -2,7 +2,7 @@
 
 namespace Author\WpPluginStarter\Frontend;
 
-use Author\WpPluginStarter\Core\Provider;
+use Author\WpPluginStarter\Core\Abstracts\Provider;
 
 /**
  * Class FrontendProvider.

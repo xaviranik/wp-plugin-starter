@@ -1,6 +1,6 @@
 <?php
 
-namespace Author\WpPluginStarter\Core\Abstracts;
+namespace Author\WpPluginStarter\Core\Interfaces;
 
 /**
  * Interface HookableInterface
