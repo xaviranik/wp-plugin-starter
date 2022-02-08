@@ -2,8 +2,6 @@
 
 namespace Author\WpPluginStarter;
 
-use Author\WpPluginStarter\Admin\Menu;
-use Author\WpPluginStarter\Core\Provider;
 use Author\WpPluginStarter\Core\Container\Container;
 
 /**
@@ -78,14 +76,13 @@ class WpPluginStarter {
 
 	/**
 	 * WpPluginStarter Constructor.
-	 *
-	 * @throws \ReflectionException
 	 */
 	public function __construct() {
 		$this->init();
 		$this->register_lifecycle();
 		$this->register_container();
-		$this->register_services();
+
+		add_action( 'plugins_loaded', [ Bootstrap::class, 'bootstrap_plugin' ] );
 	}
 
 	/**
@@ -120,25 +117,7 @@ class WpPluginStarter {
 	 * @return void
 	 */
 	protected function register_container(): void {
-		$container       = new Container();
-		self::$container = $container;
-	}
-
-	/**
-	 * Registers services.
-	 *
-	 * @return void
-	 *
-	 * @throws \ReflectionException
-	 */
-	protected function register_services(): void {
-		$provider = new Provider(
-            [
-				Menu::class,
-			]
-        );
-
-		$provider->register();
+		self::$container = new Container();
 	}
 
 	/**
